@@ -165,13 +165,13 @@ TSWriter::process (const string& inname, const string& outname)
   if (!infile)
     {
       error ("audiowmark: unable to open %s for reading\n", inname.c_str());
-      return Error (strerror (errno));
+      return Error (std::strerror (errno));
     }
 
   if (!outfile)
     {
       error ("audiowmark: unable to open %s for writing\n", outname.c_str());
-      return Error (strerror (errno));
+      return Error (std::strerror (errno));
     }
 
   while (!feof (infile))
